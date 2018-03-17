@@ -13,7 +13,7 @@ func getColor() string {
 func main() {
 	app := gin.Default()
 	app.GET("/", index)
-	app.GET("/mnemonic", index)
-	app.GET("/mnemonic/:count", RandomWord)
-	app.Run(":8000")
+	app.GET("/api", index)
+	app.GET("/api/:count", RandomWord)
+	app.Run("0.0.0.0:8000")
 }
