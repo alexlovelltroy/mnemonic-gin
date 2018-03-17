@@ -11,11 +11,11 @@ rainbow-mnemonic: main.go
 .PHONY: image
 image:
 	@echo Building with color $(COLOR)
-	COLOR=$(COLOR) docker build . -t $(DOCKER_IMAGE):$(COLOR) --build-arg COLOR=$(COLOR) -f Dockerfile
+	COLOR=$(COLOR) docker build . -t alexlovelltroy/$(DOCKER_IMAGE):$(COLOR) --build-arg COLOR=$(COLOR) -f Dockerfile
 
 .PHONY: push
 push: image
-	docker push $(DOCKER_IMAGE):$(COLOR)
+	docker push alexlovelltroy/$(DOCKER_IMAGE):$(COLOR)
 
 .PHONY: push-gcloud
 push-gcloud: 
